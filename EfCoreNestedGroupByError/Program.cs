@@ -24,7 +24,7 @@ if (!applicationDbContext.PageImpressions.Any())
 }
 
 var result = applicationDbContext.PageImpressions
-    .GroupBy(x => x.CreationDateTime)
+    .GroupBy(x => x.CreationDateTime.Date)
     .Select(x => new
     {
         TotalCount = x.Count(),
